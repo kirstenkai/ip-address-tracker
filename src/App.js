@@ -7,6 +7,17 @@ function App() {
     <div className="App">
       <img src={headerImg} alt="purple background" />
       <h1>IP Address Tracker</h1>
+      <input
+        type="search"
+        placeholder="Search for any IP address or domain"
+      ></input>
+      <button type="submit">></button>
+      <div>
+        <h4>IP Address</h4>
+        <h4>Location</h4>
+        <h4>Timezone</h4>
+        <h4>ISP</h4>
+      </div>
     </div>
   );
 }
