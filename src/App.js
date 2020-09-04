@@ -4,35 +4,14 @@ import "./App.css";
 import axios from "axios";
 
 function App() {
-  // axios({
-  //   method: "get",
-  //   url:
-  //     "https://geo.ipify.org/service/account-balance?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx",
-  // }).then(function (response) {
-  //   console.log(response);
-  // });
-
-  const test = (e) => {
-    e.preventDefault();
-    const baseUrl =
-      "/service/account-balance?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx";
-    const axiosConfig = {
-      withCredentials: true,
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    };
-
-    axios
-      .get(baseUrl, axiosConfig)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  axios
+    .get("api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx&ipAddress=8.8.8.8")
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   return (
     <div className="App">
@@ -44,7 +23,6 @@ function App() {
       ></input>
       <button type="submit">></button>
       <div>
-        <button onClick={test}>test</button>
         <h4>IP Address</h4>
         <p>192.212.174.101</p>
         <h4>Location</h4>
