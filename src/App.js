@@ -4,18 +4,36 @@ import "./App.css";
 import axios from "axios";
 
 function App() {
-  const api_key = "at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx";
-  axios({
-    method: "get",
-    url:
-      "https://geo.ipify.org/api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx&ipAddress=8.8.8.8",
-    data: { apiKey: api_key },
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then(function (response) {
-    console.log(response.data.message);
-  });
+  // axios({
+  //   method: "get",
+  //   url:
+  //     "https://geo.ipify.org/service/account-balance?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx",
+  // }).then(function (response) {
+  //   console.log(response);
+  // });
+
+  const test = (e) => {
+    e.preventDefault();
+    const baseUrl =
+      "/service/account-balance?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx";
+    const axiosConfig = {
+      withCredentials: true,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    };
+
+    axios
+      .get(baseUrl, axiosConfig)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="App">
       <img src={headerImg} alt="purple background" />
@@ -26,6 +44,7 @@ function App() {
       ></input>
       <button type="submit">></button>
       <div>
+        <button onClick={test}>test</button>
         <h4>IP Address</h4>
         <p>192.212.174.101</p>
         <h4>Location</h4>
