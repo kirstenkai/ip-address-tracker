@@ -5,7 +5,7 @@ import axios from "axios";
 
 function App() {
   axios
-    .get("api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx&ipAddress=8.8.8.8")
+    .get("api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx")
     .then((res) => {
       console.log(res.data);
     })
