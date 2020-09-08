@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import headerImg from "./assets/pattern-bg.png";
-import "./App.css";
+import "./App.scss";
 import axios from "axios";
 
 const api_url = "api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx";
