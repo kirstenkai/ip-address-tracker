@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import headerImg from "./assets/pattern-bg.png";
 import "./App.scss";
 import axios from "axios";
+import Map from "./Map";
 
 const api_url = "api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx";
 
@@ -52,6 +53,7 @@ function App() {
         <h4>ISP</h4>
         <p>{IPData.isp}</p>
       </div>
+      <Map />
     </div>
   );
 }
