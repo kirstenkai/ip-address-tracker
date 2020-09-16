@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import L from "leaflet";
 
-function Map() {
+function Map({ markerPosition }) {
+  const mapRef = useRef(null);
   useEffect(() => {
-    L.map("map", {
+    mapRef.current = L.map("map", {
       center: [49.8419, 24.0315],
       zoom: 16,
       layers: [
@@ -14,6 +15,15 @@ function Map() {
       ],
     });
   }, []);
+
+  const markerRef = useRef(null);
+  useEffect(() => {
+    if (markerRef.current) {
+      markerRef.current.setLatLng(markerPosition);
+    } else {
+      markerRef.current = L.marker(markerPosition).addTo(mapRef.current);
+    }
+  }, [markerPosition]);
 
   return <div id="map"></div>;
 }
