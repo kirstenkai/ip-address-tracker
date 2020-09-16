@@ -53,7 +53,6 @@ function App() {
         <h4>ISP</h4>
         <p>{IPData.isp}</p>
       </div>
-      <Map />
     </div>
   );
 }
