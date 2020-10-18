@@ -44,7 +44,7 @@ function App() {
             type="search"
             placeholder="Search for any IP address or domain"
           ></input>
-          <button type="submit">></button>
+          <button type="submit">{'>'}</button>
         </div>
       </div>
       <div>
