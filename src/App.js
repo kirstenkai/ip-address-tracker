@@ -3,6 +3,7 @@ import headerImg from "./assets/pattern-bg.png";
 import "./App.scss";
 import axios from "axios";
 // import Map from "./Map";
+import InfoCard from "./components/InfoCard";
 
 const api_url = "api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx";
 
@@ -47,16 +48,15 @@ function App() {
           <button type="submit">{'>'}</button>
         </div>
       </div>
-      <div>
-        <h4>IP Address</h4>
-        <p>{IPData.ip}</p>
-        <h4>Location</h4>
-        <p>{`${IPData.city}, ${IPData.country} ${IPData.postalCode}`}</p>
-        <h4>Timezone</h4>
-        <p>{`UTC${IPData.timezone}`}</p>
-        <h4>ISP</h4>
-        <p>{IPData.isp}</p>
-      </div>
+      <InfoCard 
+        ip={IPData.ip}
+        city={IPData.city}
+        country={IPData.country}
+        postalCode={IPData.postalCode}
+        timezone={IPData.timezone}
+        isp={IPData.isp}
+
+      />
       {/* <Map /> */}
     </div>
   );

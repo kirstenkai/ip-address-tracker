@@ -1,16 +1,16 @@
 import React from "react";
 
-const InfoCard = () => {
+const InfoCard = (props) => {
   return (
     <div>
       <h4>IP Address</h4>
-      <p>192.212.174.101</p>
+  <p>{props.ip}</p>
       <h4>Location</h4>
-      <p>Brooklyn, NY 10001</p>
+  <p>{props.city}, {props.country} {props.postalCode}</p>
       <h4>Timezone</h4>
-      <p>UTC-5:00</p>
+  <p>UTC{props.timezone}</p>
       <h4>ISP</h4>
-      <p>SpaceX Starlink</p>
+  <p>{props.isp}</p>
     </div>
   );
 };
