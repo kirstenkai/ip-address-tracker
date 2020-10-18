@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import headerImg from "./assets/pattern-bg.png";
 import "./App.scss";
 import axios from "axios";
-import Map from "./Map";
+// import Map from "./Map";
 
 const api_url = "api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx";
 
@@ -36,13 +36,17 @@ function App() {
 
   return (
     <div className="App">
-      <img src={headerImg} alt="purple background" />
-      <h1>IP Address Tracker</h1>
-      <input
-        type="search"
-        placeholder="Search for any IP address or domain"
-      ></input>
-      <button type="submit">></button>
+      <div className="container">
+        <img src={headerImg} alt="purple background" />
+        <div className="header">
+          <h1>IP Address Tracker</h1>
+          <input
+            type="search"
+            placeholder="Search for any IP address or domain"
+          ></input>
+          <button type="submit">></button>
+        </div>
+      </div>
       <div>
         <h4>IP Address</h4>
         <p>{IPData.ip}</p>
@@ -53,6 +57,7 @@ function App() {
         <h4>ISP</h4>
         <p>{IPData.isp}</p>
       </div>
+      {/* <Map /> */}
     </div>
   );
 }
