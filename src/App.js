@@ -42,11 +42,6 @@ function App() {
         <img src={headerImg} alt="purple background" />
         <div className="header">
           <h1>IP Address Tracker</h1>
-          {/* <input
-            type="search"
-            placeholder="Search for any IP address or domain"
-          ></input>
-          <button type="submit">{'>'}</button> */}
           <SearchBar />
         </div>
       </div>
