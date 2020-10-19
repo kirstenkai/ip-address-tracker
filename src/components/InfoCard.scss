@@ -1,0 +1,24 @@
+.infoCard {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 40px 60px;
+  border-radius: 10px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.info-section {
+  width: 28%;
+}
+
+.infoCard h4 {
+  text-transform: uppercase;
+  color: hsl(0, 0%, 59%);
+}
+
+.infoCard p {
+  color: hsl(0, 0%, 17%);
+  font-size: 20px;
+  font-weight: bold;
+}

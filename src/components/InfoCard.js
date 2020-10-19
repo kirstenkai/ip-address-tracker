@@ -1,16 +1,31 @@
 import React from "react";
+import "./InfoCard.scss";
 
 const InfoCard = (props) => {
   return (
-    <div>
-      <h4>IP Address</h4>
-  <p>{props.ip}</p>
-      <h4>Location</h4>
-  <p>{props.city}, {props.country} {props.postalCode}</p>
-      <h4>Timezone</h4>
-  <p>UTC{props.timezone}</p>
-      <h4>ISP</h4>
-  <p>{props.isp}</p>
+    <div className="infoCard">
+      <div className="info-section">
+        <h4>IP Address</h4>
+        <p>{props.ip}</p>
+      </div>
+      <div className="info-section">
+        <h4>Location</h4>
+        <p>
+          {props.city}, {props.country} {props.postalCode}
+        </p>
+      </div>
+      <div className="info-section">
+        <h4>Timezone</h4>
+        <p>
+          UTC{props.timezone}
+        </p>
+      </div>
+      <div className="info-section">
+        <h4>ISP</h4>
+        <p>
+          {props.isp}
+        </p>
+      </div>
     </div>
   );
 };
