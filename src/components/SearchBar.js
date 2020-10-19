@@ -1,11 +1,15 @@
 import React from "react";
-import { Input } from "semantic-ui-react";
+import "./SearchBar.scss";
 
-const SearchBar = () => (
-  <Input
-    action={{ icon: "angle right" }}
-    placeholder="Search for any IP address or domain"
-  />
-);
+const SearchBar = () => {
+  return (
+    <div className="searchBar">
+      <form>
+          <input type="search" placeholder="Search for IP addresses"/>
+          <button type="submit">{'>'}</button>
+      </form>
+    </div>
+  )
+}
 
 export default SearchBar;

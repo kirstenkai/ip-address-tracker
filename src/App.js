@@ -4,6 +4,7 @@ import "./App.scss";
 import axios from "axios";
 // import Map from "./Map";
 import InfoCard from "./components/InfoCard";
+import SearchBar from './components/SearchBar'
 
 const api_url = "api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx";
 
@@ -41,11 +42,12 @@ function App() {
         <img src={headerImg} alt="purple background" />
         <div className="header">
           <h1>IP Address Tracker</h1>
-          <input
+          {/* <input
             type="search"
             placeholder="Search for any IP address or domain"
           ></input>
-          <button type="submit">{'>'}</button>
+          <button type="submit">{'>'}</button> */}
+          <SearchBar />
         </div>
       </div>
       <InfoCard 
