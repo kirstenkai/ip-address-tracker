@@ -16,12 +16,14 @@ function App() {
     postalCode: "",
     timezone: "",
     isp: "",
+    lat: "",
+    lng: "" 
   });
 
   useEffect(() => {
     axios.get(api_url).then((res) => {
       const { ip, isp } = res.data;
-      const { city, country, postalCode, timezone } = res.data.location;
+      const { city, country, postalCode, timezone, lat, lng } = res.data.location;
 
       setIPData((prev) => {
         return {
@@ -31,6 +33,8 @@ function App() {
           postalCode,
           timezone,
           isp,
+          lat,
+          lng
         };
       });
     });
@@ -52,9 +56,9 @@ function App() {
         postalCode={IPData.postalCode}
         timezone={IPData.timezone}
         isp={IPData.isp}
-
       />
-      <Map className="leaflet-container" markerPosition={[43.6532, 79.3832]}/>
+      
+      <Map className="leaflet-container" markerPosition={[IPData.lat, IPData.lng]}/>
     </div>
   );
 }
