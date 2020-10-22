@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import L from "leaflet";
+import "./Map.scss";
 
 function Map({ markerPosition }) {
   const mapRef = useRef(null);

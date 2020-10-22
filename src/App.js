@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import headerImg from "./assets/pattern-bg.png";
 import "./App.scss";
 import axios from "axios";
-// import Map from "./Map";
+import Map from "./components/Map";
 import InfoCard from "./components/InfoCard";
 import SearchBar from './components/SearchBar'
 
@@ -54,7 +54,7 @@ function App() {
         isp={IPData.isp}
 
       />
-      {/* <Map /> */}
+      <Map className="leaflet-container" markerPosition={[43.6532, 79.3832]}/>
     </div>
   );
 }
