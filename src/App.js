@@ -57,8 +57,13 @@ function App() {
         timezone={IPData.timezone}
         isp={IPData.isp}
       />
-      
-      <Map className="leaflet-container" markerPosition={[IPData.lat, IPData.lng]}/>
+
+      <Map 
+        className="leaflet-container" 
+        markerPosition={[IPData.lat, IPData.lng]}
+        lat={IPData.lat}
+        lng={IPData.lng}
+      />
     </div>
   );
 }

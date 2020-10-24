@@ -2,11 +2,12 @@ import React, { useEffect, useRef } from "react";
 import L from "leaflet";
 import "./Map.scss";
 
-function Map({ markerPosition }) {
+function Map({ markerPosition, lat, lng }) {
   const mapRef = useRef(null);
   useEffect(() => {
     mapRef.current = L.map("map", {
-      center: [49.8419, 24.0315],
+      center: [49.26636, -122.95263
+      ],
       zoom: 16,
       layers: [
         L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
