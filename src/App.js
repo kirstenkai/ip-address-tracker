@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import headerImg from "./assets/pattern-bg.png";
 import "./App.scss";
 import Axios from "axios";
-import Map from "./components/Map";
 import InfoCard from "./components/InfoCard";
-import SearchBar from './components/SearchBar'
+import SearchBar from './components/SearchBar';
+import { Map as MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 const api_url = "api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx";
 
@@ -18,11 +18,9 @@ function App() {
     timezone: "",
     isp: "",
     lat: "",
-    lng: "" 
+    lng: ""
   });
 
-
-  
   const search = searchValue => {
     Axios.get(`${api_url}&domain=${searchValue}`)
       .then((res) => {
@@ -41,7 +39,6 @@ function App() {
             lng
           }
         })
-
       })
   }
 
@@ -70,13 +67,13 @@ function App() {
         <img src={headerImg} alt="purple background" />
         <div className="header">
           <h1>IP Address Tracker</h1>
-          <SearchBar 
+          <SearchBar
             search={search}
             placeholder="Search for any IP address or domain"
           />
         </div>
       </div>
-      <InfoCard 
+      <InfoCard
         ip={IPData.ip}
         city={IPData.city}
         country={IPData.country}
@@ -85,12 +82,13 @@ function App() {
         isp={IPData.isp}
       />
 
-      <Map 
-        className="leaflet-container" 
-        markerPosition={[IPData.lat, IPData.lng]}
-        lat={IPData.lat}
-        lng={IPData.lng}
-      />
+      <MapContainer center={[IPData.lat, IPData.lng]} zoom={16} className="map">
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={[IPData.lat, IPData.lng]}/>
+      </MapContainer>
     </div>
   );
 }
