@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import headerImg from "./assets/pattern-bg.png";
 import "./App.scss";
-import axios from "axios";
+import Axios from "axios";
 import Map from "./components/Map";
 import InfoCard from "./components/InfoCard";
 import SearchBar from './components/SearchBar'
@@ -9,6 +9,7 @@ import SearchBar from './components/SearchBar'
 const api_url = "api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx";
 
 function App() {
+
   const [IPData, setIPData] = useState({
     ip: "",
     city: "",
@@ -20,11 +21,34 @@ function App() {
     lng: "" 
   });
 
+
+  
+  const search = searchValue => {
+    Axios.get(`${api_url}&domain=${searchValue}`)
+      .then((res) => {
+        const { ip, isp } = res.data;
+        const { city, country, postalCode, timezone, lat, lng } = res.data.location;
+
+        setIPData(() => {
+          return {
+            ip,
+            city,
+            country,
+            postalCode,
+            timezone,
+            isp,
+            lat,
+            lng
+          }
+        })
+
+      })
+  }
+
   useEffect(() => {
-    axios.get(api_url).then((res) => {
+    Axios.get(api_url).then((res) => {
       const { ip, isp } = res.data;
       const { city, country, postalCode, timezone, lat, lng } = res.data.location;
-
       setIPData((prev) => {
         return {
           ip,
@@ -46,7 +70,10 @@ function App() {
         <img src={headerImg} alt="purple background" />
         <div className="header">
           <h1>IP Address Tracker</h1>
-          <SearchBar />
+          <SearchBar 
+            search={search}
+            placeholder="Search for any IP address or domain"
+          />
         </div>
       </div>
       <InfoCard 

@@ -1,12 +1,37 @@
-import React from "react";
+
+import React, { useState } from "react";
 import "./SearchBar.scss";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSearchInputChanges = (e) => {
+    setSearchValue(e.target.value);
+  }
+
+  const resetInputField = () => {
+    setSearchValue("")
+  }
+
+  const callSearchFunction = (e) => {
+    e.preventDefault();
+    props.search(searchValue);
+    resetInputField();
+  }
   return (
     <div className="searchBar">
       <form>
-          <input type="search" placeholder="Search for any IP address or domain"/>
-          <button type="submit">{'>'}</button>
+          <input 
+          value={searchValue} 
+          onChange={handleSearchInputChanges} type="text" 
+          placeholder={props.placeholder}
+          />
+          <button 
+          type="submit"
+          onClick={callSearchFunction}
+          >{'>'}
+          </button>
       </form>
     </div>
   )
