@@ -21,18 +21,19 @@ const SearchBar = (props) => {
   }
   return (
     <div className="searchBar">
-      <form>
-          <input 
-          value={searchValue} 
-          onChange={handleSearchInputChanges} type="text" 
-          placeholder={props.placeholder}
-          />
-          <button 
-          type="submit"
-          onClick={callSearchFunction}
-          >{'>'}
-          </button>
-      </form>
+      <input
+        className="searchInput"
+        value={searchValue}
+        onChange={handleSearchInputChanges} type="text"
+        placeholder={props.placeholder}
+      />
+      <button
+        className="searchButton"
+        type="submit"
+        onClick={callSearchFunction}
+      >
+        <svg className="searchIcon" xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" /></svg>
+      </button>
     </div>
   )
 }
