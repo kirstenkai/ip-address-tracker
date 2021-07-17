@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import headerImg from "./assets/pattern-bg.png";
+
 import "./App.scss";
 import Axios from "axios";
 import InfoCard from "./components/InfoCard";
 import SearchBar from './components/SearchBar';
-import { Map as MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Map as MapContainer, TileLayer, Marker } from 'react-leaflet';
 
 const api_url = "api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx";
 
@@ -63,15 +63,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
-        <img src={headerImg} alt="purple background" />
-        <div className="header">
-          <h1>IP Address Tracker</h1>
-          <SearchBar
-            search={search}
-            placeholder="Search for any IP address or domain"
-          />
-        </div>
+      <div className="header">
+        <h1>IP Address Tracker</h1>
+        <SearchBar
+          search={search}
+          placeholder="Search for any IP address or domain"
+        />
       </div>
       <InfoCard
         ip={IPData.ip}
@@ -82,7 +79,7 @@ function App() {
         isp={IPData.isp}
       />
 
-      <MapContainer center={[IPData.lat, IPData.lng]} zoom={16} className="map">
+      <MapContainer center={[IPData.lat, IPData.lng]} zoom={15} className="map">
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

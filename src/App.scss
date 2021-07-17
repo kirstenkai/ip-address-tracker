@@ -1,26 +1,37 @@
 .App {
-  text-align: center;
-  // background-color: salmon;
   height: 100vh;
-}
-
-.container {
-  position: relative;
-  height: 17.8em;
-}
-
-.container img {
-  height: 100%;
-  width: 100vw;
+  width: 100%;
 }
 
 .header {
-  position: absolute;
-  bottom: 46%;
-  right: 31%;
-  color: white;
+  background-image: url("/pattern-bg.png");
+  background-repeat: no-repeat;
+  color: #fff;
+  height: 17.8em;
+  padding-top: 30px;
+  text-align: center;
 }
 
 .map {
-  height: 100vh;
+  height: calc(100% - 20em);
+  width: 100vw;
+  bottom: 15em;
+}
+
+@media only screen and (max-width: 900px) {
+  .map {
+    bottom: 16.4em;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .map {
+    bottom: 29em;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .map {
+    bottom: 31.4em;
+  }
 }
