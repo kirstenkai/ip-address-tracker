@@ -1,13 +1,12 @@
 .infoCard {
-  position: absolute;
-  top: 25%;
-  right: 20%;
+  position: relative;
+  bottom: 4em;
   display: flex;
   justify-content: space-between;
   background-color: white;
   padding: 40px 60px;
   border-radius: 10px;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   box-shadow: 0 2px 50px -2px hsl(0, 0%, 17%);
   z-index: 1000;
@@ -26,4 +25,31 @@
   color: hsl(0, 0%, 17%);
   font-size: 20px;
   font-weight: bold;
+}
+
+.rightBorder {
+  border-right: 1px solid hsl(0, 0%, 59%);
+  margin-right: 2em;
+}
+
+@media only screen and (max-width: 650px) {
+  .infoCard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+  }
+
+  .infoCard h4, p {
+    text-align: center;
+  }
+
+  .info-section {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .rightBorder {
+    border: none;
+    margin: 0;
+  }
 }
