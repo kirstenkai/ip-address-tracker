@@ -78,7 +78,7 @@ function App() {
         />
         <Marker position={[IPData.lat, IPData.lng]}/>
       </MapContainer>
-      
+
       <InfoCard
         ip={IPData.ip}
         city={IPData.city}
