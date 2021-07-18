@@ -69,6 +69,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <div className="header">
         <h1>IP Address Tracker</h1>
         <SearchBar
@@ -77,7 +78,7 @@ function App() {
         />
       </div>
 
-      <MapContainer center={[IPData.lat, IPData.lng]} zoom={15} className="map">
+      <MapContainer center={[IPData.lat, IPData.lng]} zoom={15} zoomControl={false} className="map">
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
