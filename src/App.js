@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import L from "leaflet";
 
 import "./App.scss";
 import Axios from "axios";
@@ -7,6 +8,11 @@ import SearchBar from './components/SearchBar';
 import { Map as MapContainer, TileLayer, Marker } from 'react-leaflet';
 
 const api_url = "api/v1?apiKey=at_wOqGYbIdswsSjQiu9FcX7QL6VDxFx";
+
+const customIcon = new L.icon({
+  iconUrl: "/icon-location.svg",
+  iconSize: [40, 50]
+});
 
 function App() {
 
@@ -76,7 +82,7 @@ function App() {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[IPData.lat, IPData.lng]}/>
+        <Marker position={[IPData.lat, IPData.lng]} icon={customIcon}/>
       </MapContainer>
 
       <InfoCard
