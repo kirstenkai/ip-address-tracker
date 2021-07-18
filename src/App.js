@@ -70,14 +70,6 @@ function App() {
           placeholder="Search for any IP address or domain"
         />
       </div>
-      <InfoCard
-        ip={IPData.ip}
-        city={IPData.city}
-        country={IPData.country}
-        postalCode={IPData.postalCode}
-        timezone={IPData.timezone}
-        isp={IPData.isp}
-      />
 
       <MapContainer center={[IPData.lat, IPData.lng]} zoom={15} className="map">
         <TileLayer
@@ -86,6 +78,15 @@ function App() {
         />
         <Marker position={[IPData.lat, IPData.lng]}/>
       </MapContainer>
+      
+      <InfoCard
+        ip={IPData.ip}
+        city={IPData.city}
+        country={IPData.country}
+        postalCode={IPData.postalCode}
+        timezone={IPData.timezone}
+        isp={IPData.isp}
+      />
     </div>
   );
 }

@@ -5,7 +5,7 @@
 }
 
 .searchInput {
-  width: 500px;
+  width: 40%;
   border: none;
   border-radius: 7px;
   border-bottom-right-radius: 0;
@@ -30,23 +30,23 @@
   background-color: #3B3B3B;
 }
 
-
-@media only screen and (max-width: 650px) {
+@media only screen and (min-width: 320px) {
   .searchInput {
-    width: 450px;
+    width: 75%;
+    font-size: 0.9em;
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (min-width: 768px) {
   .searchInput {
-    width: 350px;
+    width: 60%;
+    font-size: 1em;
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (min-width: 1024px) {
   .searchInput {
-    width: 250px;
+    width: 50%;
+    font-size: 1.3em;
   }
 }
-
-
